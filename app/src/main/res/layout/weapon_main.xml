@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipChildren="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:layout_marginTop="30dp">
+        <FrameLayout
+            android:id="@+id/weapons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/frameLayout"
+            android:layout_toLeftOf="@+id/frameLayout">
+
+            <TextView
+                android:id="@+id/weapon1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/weapon2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true">
+            <TextSwitcher
+                android:id="@+id/ammo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
+
+        </FrameLayout>
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="18dp"
+        android:clipChildren="false"
+        android:overScrollMode="never"
+        app:layoutManager="com.ramotion.cardslider.CardSliderLayoutManager"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="117dp"
+        android:layout_marginTop="30dp"
+        android:gravity="center">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextSwitcher
+                    android:id="@+id/weapon_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:text="test"></TextSwitcher>
+
+
+                <TableLayout
+                    android:id="@+id/table_progressbars"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal">
+
+                    <TableRow
+                        android:id="@+id/p1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/p1_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hit Damage" />
+
+                        <ProgressBar
+                            android:id="@+id/damageprogress"
+                            style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:max="120"
+                            android:min="0"
+                            android:paddingLeft="20dp"
+                            android:progress="90"
+                            android:progressDrawable="@drawable/progress_bar"
+                            android:progressTint="#f00" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/p2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/p2_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Bullet Speed" />
+
+                        <ProgressBar
+                            android:id="@+id/bulletprogress"
+                            style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:max="1000"
+                            android:min="0"
+                            android:paddingLeft="20dp"
+                            android:progress="20"
+                            android:progressDrawable="@drawable/progress_bar" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/p3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/p3_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Impact Power" />
+
+                        <ProgressBar
+                            android:id="@+id/impactprogress"
+                            style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:max="40000"
+                            android:min="0"
+                            android:paddingLeft="20dp"
+                            android:progress="20"
+                            android:progressDrawable="@drawable/progress_bar" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/p4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/p4_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Range" />
+
+                        <RelativeLayout
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content">
+
+                            <ProgressBar
+                                android:id="@+id/rangeprogress"
+                                style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                                android:layout_width="250dp"
+                                android:layout_height="wrap_content"
+                                android:max="650"
+                                android:min="0"
+                                android:paddingLeft="20dp"
+                                android:progress="300"
+                                android:progressDrawable="@drawable/progress_bar"></ProgressBar>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignLeft="@+id/rangeprogress"
+                                android:layout_alignTop="@id/rangeprogress"
+                                android:layout_alignRight="@id/rangeprogress"
+                                android:layout_alignBottom="@id/rangeprogress"
+                                android:background="@android:color/transparent"
+                                android:paddingLeft="30dp"
+                                android:textColor="#FFF" />
+                        </RelativeLayout>
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+</LinearLayout>
